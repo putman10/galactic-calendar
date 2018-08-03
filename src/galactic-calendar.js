@@ -3,12 +3,13 @@ constructor(userBirthDate, currentDate, lifeExp) {
   this.birthDate = userBirthDate;
   this.curDate = currentDate;
   this.lifeExpectancy = lifeExp;
-  this.earthYears;
-  this.earthSeconds;
-  this.mercuryYears;
-  this.venusYears;
-  this.marsYears;
-  this.jupiterYears;
+  this.earthYears = 0;
+  this.earthYearsLeft = 0;
+  this.earthSeconds = 0;
+  this.mercuryYears = 0;
+  this.venusYears = 0;
+  this.marsYears = 0;
+  this.jupiterYears = 0;
 }
 
 calculateAge(){
@@ -18,6 +19,7 @@ calculateAge(){
   this.calculateVenusYears();
   this.calculateMarsYears();
   this.calculateJupiterYears();
+  this.calculateEarthLifeLeft();
   }
 
 calculateEarthYears() {
@@ -49,6 +51,10 @@ calculateMarsYears() {
 calculateJupiterYears() {
   let jupiterYears = (((((this.earthSeconds/60)/24)/30)/365)/11.86);
   this.jupiterYears =  jupiterYears;
-  debugger;
+}
+
+calculateEarthLifeLeft() {
+  let earthLifeLeft = this.lifeExpectancy - this.earthYears;
+  this.earthYearsLeft =  earthLifeLeft;
 }
 }

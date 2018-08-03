@@ -13,6 +13,7 @@ $(document).ready(function() {
     let birthDate = new Date("1990-01-30");
     let currentDate = new Date();
     let reusableAge = new Age(birthDate, currentDate, lifeExpectancy);
-    $(".results").text(reusableAge.calculateAge());
+    reusableAge.calculateAge();
+    $(".results").text();
   });
 });

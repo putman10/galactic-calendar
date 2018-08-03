@@ -42,5 +42,10 @@ describe('Age', function(){
    expect(reusableAge.jupiterYears).toEqual(4.810459932084363);
  });
 
+ it('should test wether the correct earth life left of user is returned', function(){
+   reusableAge.calculateEarthLifeLeft();
+   expect(reusableAge.earthYearsLeft).toEqual(50.7);
+ });
+
 
 });
