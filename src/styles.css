@@ -2,6 +2,7 @@
   text-align: center;
   display: none;
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 body {
     background-image: url('./cosmos.jpg');
@@ -35,4 +36,9 @@ label {
 
 span {
   font-weight: normal;
+}
+
+.planet{
+  margin-top: 20px;
+  color: white;
 }
