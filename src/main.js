@@ -8,7 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 $(document).ready(function() {
   $("#age-calculator").submit(function(event){
     event.preventDefault();
-    var birthdate = $("#age").val();
+    // var birthdate = $("#age").val();
+    var birthdate = "1990-01-30";
     var reusableAge = new Age(birthdate);
     $(".results").text(reusableAge.calculateAge());
   });
