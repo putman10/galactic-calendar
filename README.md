@@ -55,4 +55,4 @@ _Please email with any questions._
 
 *This software is licensed under the MIT license.*
 
-Copyright (c) 2018 **_Kelli McCloskey, Nikki Boyd, Ryan Putman, Devin Mounts & Renee Sarley_**
+Copyright (c) 2018 **_Ryan Putman_**
