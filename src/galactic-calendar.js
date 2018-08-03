@@ -11,7 +11,7 @@ calculateAge(){
   this.earthYears = this.calculateEarthYears();
   this.earthMonths = this.calculateEarthMonths();
   this.earthDays = this.calculateEarthDays();
-  // this.earthSeconds = this.convertAgeToSeconds()
+  this.earthSeconds = this.convertAgeToSeconds()
   }
 
 calculateEarthYears() {
@@ -22,14 +22,9 @@ calculateEarthYears() {
 }
 
 calculateEarthMonths() {
-  debugger;
   let curDate = new Date();
   let birthDate = new Date(this.birthDate);
-  let testcurrent = curDate.getMonth();
-  testcurrent++;
-  let testbirth = birthDate.getMonth();
-  testbirth++;
-  let earthMonths = testcurrent - testbirth;
+  let earthMonths = curDate.getMonth() - birthDate.getMonth();
   return earthMonths;
 }
 
@@ -44,8 +39,8 @@ calculateEarthDays() {
 convertAgeToSeconds() {
 let curDate = new Date();debugger;
 let birthDate = new Date(this.birthDate);
-let ageInMilliSeconds = curDate.getTime() % birthDate.getTime();
-var ageInSeconds = ((ageInMilliSeconds % 60000) / 1000).toFixed(0);
+let ageInMilliSeconds = curDate.getTime() - birthDate.getTime();
+var ageInSeconds = (ageInMilliSeconds / 1000).toFixed(0);
 return ageInSeconds;
 }
 }
