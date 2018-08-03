@@ -9,10 +9,10 @@ $(document).ready(function() {
   $("#age-calculator").submit(function(event){
     event.preventDefault();
     // var birthdate = $("#age").val();
-    var hardCodedInput = "1990-01-30";
-    var birthDate = new Date(hardCodedInput);
-    var currentDate = new Date();
-    var reusableAge = new Age(birthDate, currentDate);
+    let lifeExpectancy = 78.7;
+    let birthDate = new Date("1990-01-30");
+    let currentDate = new Date();
+    let reusableAge = new Age(birthDate, currentDate, lifeExpectancy);
     $(".results").text(reusableAge.calculateAge());
   });
 });

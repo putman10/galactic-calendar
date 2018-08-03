@@ -1,7 +1,8 @@
 export class Age {
-constructor(userBirthDate, currentDate) {
+constructor(userBirthDate, currentDate, lifeExp) {
   this.birthDate = userBirthDate;
   this.curDate = currentDate;
+  this.lifeExpectancy = lifeExp;
   this.earthYears;
   this.earthSeconds;
   this.mercuryYears;

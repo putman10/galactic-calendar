@@ -6,7 +6,8 @@ describe('Age', function(){
   beforeEach(function() {
     let birthDate = new Date("1990-01-30");
     let curDate = new Date("2018-08-03");
-    reusableAge = new Age(birthDate, curDate);
+    let lifeExpectancy = 78.7;
+    reusableAge = new Age(birthDate, curDate, lifeExpectancy);
     reusableAge.calculateEarthYears();
     reusableAge.convertAgeToSeconds();
   });
@@ -20,7 +21,6 @@ describe('Age', function(){
    reusableAge.convertAgeToSeconds();
    expect(reusableAge.earthSeconds).toEqual(899596800);
  });
-
 
  it('should test wether correct Mercury age is returned', function(){
    reusableAge.calculateMercuryYears();
