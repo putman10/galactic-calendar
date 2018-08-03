@@ -8,11 +8,11 @@ import './styles.css';
 $(document).ready(function() {
   $("#age-calculator").submit(function(event){
     event.preventDefault();
-    var birthDateInput = $("#age").val();
-    var lifeExpectancy = $("#life-expectancy").val();
+    let birthDateInput = $("#age").val();
+    let lifeExpectancy = $("#life-expectancy").val();
     let birthDate = new Date(birthDateInput);
-    let currentDate = new Date();
-    let reusableAge = new Age(birthDate, currentDate, lifeExpectancy);
+    const currentDate = new Date();
+    const reusableAge = new Age(birthDate, currentDate, lifeExpectancy);
     reusableAge.calculateAge();
     $(".birth-date").text(reusableAge.birthDate);
     $(".current-date").text(reusableAge.curDate);
