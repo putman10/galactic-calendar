@@ -1,26 +1,51 @@
 export class Age {
   constructor(birthdate) {
     this.birthDate = birthdate;
-    this.earthAge = 0;
-    this.seconds = 0;
-  }
-  calculateAge(){
-  this.earthAge = this.yearDifference()
-  console.log(this.age);
+    this.earthYears = 0;
+    this.earthMonths = 0;
+    this.earthDays = 0;
+    this.earthSeconds = 0;
   }
 
-  convertAgeToSeconds() {
-  let dateParts = this.birthdate.split("/");
-  let birthDateObject = new Date(dateParts[2], (dateParts[1] - 1), dateParts[0]);
-  this.seconds = birthDateObject.getSeconds();
-  return this.seconds;
+calculateAge(){
+  this.earthYears = this.calculateEarthYears();
+  this.earthMonths = this.calculateEarthMonths();
+  this.earthDays = this.calculateEarthDays();
+  // this.earthSeconds = this.convertAgeToSeconds()
   }
 
-  yearDifference() {
+calculateEarthYears() {
+  let curDate = new Date();
+  let birthDate = new Date(this.birthDate);
+  let earthYears = curDate.getUTCFullYear() % birthDate.getUTCFullYear();
+  return earthYears;
+}
+
+calculateEarthMonths() {
   debugger;
   let curDate = new Date();
   let birthDate = new Date(this.birthDate);
-  let earthAge = curDate.getUTCFullYear() % birthDate.getUTCFullYear();
-  return earthAge;
+  let testcurrent = curDate.getMonth();
+  testcurrent++;
+  let testbirth = birthDate.getMonth();
+  testbirth++;
+  let earthMonths = testcurrent % testbirth;
+  return earthMonths;
+}
+
+calculateEarthDays() {
+
+  let curDate = new Date();
+  let birthDate = new Date(this.birthDate);
+  let earthDays = curDate.getDate() % birthDate.getDate();
+  return earthDays;
+}
+
+convertAgeToSeconds() {
+let curDate = new Date();debugger;
+let birthDate = new Date(this.birthDate);
+let ageInMilliSeconds = curDate.getTime() % birthDate.getTime();
+var ageInSeconds = ((ageInMilliSeconds % 60000) / 1000).toFixed(0);
+return ageInSeconds;
 }
 }
