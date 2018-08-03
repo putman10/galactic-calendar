@@ -1,11 +1,12 @@
 import { Age } from './../src/galactic-calendar';
 
 describe('Age', function(){
-  var reusableAge;
+  let reusableAge;
 
   beforeEach(function() {
-    var birthdate = "1990-01-30";
-    reusableAge = new Age(birthdate);
+    let birthDate = new Date("1990-01-30");
+    let curDate = new Date("2018-08-03");
+    reusableAge = new Age(birthDate, curDate);
   });
 
  it('should test wether correct Earth age is returned', function(){
@@ -15,32 +16,32 @@ describe('Age', function(){
 
  it('should test wether correct age in seconds is returned', function(){
    reusableAge.convertAgeToSeconds();
-   expect(reusableAge.earthSeconds).toEqual(899669174);
+   expect(reusableAge.earthSeconds).toEqual(899596800);
  });
 
 
  it('should test wether correct Mercury age is returned', function(){
    reusableAge.convertAgeToSeconds();
    reusableAge.calculateMercuryYears();
-   expect(reusableAge.mercuryYears).toEqual(237.7360196812109);
+   expect(reusableAge.mercuryYears).toEqual(237.71689497716898);
  });
 
  it('should test wether correct Venus age is returned', function(){
    reusableAge.convertAgeToSeconds();
    reusableAge.calculateVenusYears();
-   expect(reusableAge.venusYears).toEqual(92.02684632821068);
+   expect(reusableAge.venusYears).toEqual(92.01944321696863);
  });
 
  it('should test wether correct Mars age is returned', function(){
    reusableAge.convertAgeToSeconds();
    reusableAge.calculateMarsYears();
-   expect(reusableAge.marsYears).toEqual(30.349279108239685);
+   expect(reusableAge.marsYears).toEqual(30.34683765665987);
  });
 
  it('should test wether correct Jupiter age is returned', function(){
    reusableAge.convertAgeToSeconds();
    reusableAge.calculateJupiterYears();
-   expect(reusableAge.jupiterYears).toEqual(4.810846941272396);
+   expect(reusableAge.jupiterYears).toEqual(4.810459932084363);
  });
 
 

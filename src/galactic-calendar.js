@@ -1,14 +1,14 @@
 export class Age {
-  constructor(userBirthDate, currentDate) {
-    this.birthDate = userBirthDate;
-    this.curDate = currentDate;
-    this.earthYears;
-    this.earthSeconds;
-    this.mercuryYears;
-    this.venusYears;
-    this.marsYears;
-    this.jupiterYears;
-  }
+constructor(userBirthDate, currentDate) {
+  this.birthDate = userBirthDate;
+  this.curDate = currentDate;
+  this.earthYears;
+  this.earthSeconds;
+  this.mercuryYears;
+  this.venusYears;
+  this.marsYears;
+  this.jupiterYears;
+}
 
 calculateAge(){
   this.calculateEarthYears();
@@ -25,9 +25,9 @@ calculateEarthYears() {
 }
 
 convertAgeToSeconds() {
-let ageInMilliSeconds = this.curDate.getTime() - this.birthDate.getTime();
-let ageInSeconds = (ageInMilliSeconds / 1000).toFixed(0);
-this.earthSeconds = parseInt(ageInSeconds);
+  let ageInMilliSeconds = this.curDate.getTime() - this.birthDate.getTime();
+  let ageInSeconds = (ageInMilliSeconds / 1000).toFixed(0);
+  this.earthSeconds = parseInt(ageInSeconds);
 }
 
 calculateMercuryYears() {
