@@ -1,0 +1,38 @@
+.results{
+  text-align: center;
+  display: none;
+  margin-top: 3rem;
+}
+body {
+    background-image: url('./cosmos.jpg');
+}
+
+.container {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.33);
+  padding:10px;
+}
+h1 {
+  font-weight: 700;
+    color: #e2bb20;
+}
+
+label {
+  color: white;
+  font-weight: 700;
+}
+
+#info {
+  background: black;
+  padding: 20px;
+  color: white;
+  font-weight: 700;
+}
+
+#info h1{
+  color: #dc3545;
+}
+
+span {
+  font-weight: normal;
+}

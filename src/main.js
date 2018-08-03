@@ -1,19 +1,33 @@
 import {Age} from './galactic-calendar';
-import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 
 
 $(document).ready(function() {
   $("#age-calculator").submit(function(event){
     event.preventDefault();
-    // var birthdate = $("#age").val();
-    let lifeExpectancy = 78.7;
-    let birthDate = new Date("1990-01-30");
+    var birthDateInput = $("#age").val();
+    var lifeExpectancy = $("#life-expectancy").val();
+    let birthDate = new Date(birthDateInput);
     let currentDate = new Date();
     let reusableAge = new Age(birthDate, currentDate, lifeExpectancy);
     reusableAge.calculateAge();
-    $(".results").text();
+    $(".birth-date").text(reusableAge.birthDate);
+    $(".current-date").text(reusableAge.curDate);
+    $(".life-expectancy").text(reusableAge.lifeExpectancy);
+    $(".earth-years").text(reusableAge.earthYears);
+    $(".earth-years-left").text(reusableAge.earthYearsLeft);
+    $(".earth-seconds").text(reusableAge.earthSeconds);
+    $(".mercury-years").text(reusableAge.mercuryYears);
+    $(".mercury-years-left").text(reusableAge.mercuryYearsLeft);
+    $(".venus-years").text(reusableAge.venusYears);
+    $(".venus-years-left").text(reusableAge.venusYearsLeft);
+    $(".mars-years").text(reusableAge.marsYears);
+    $(".mars-years-left").text(reusableAge.marsYearsLeft);
+    $(".jupiter-years").text(reusableAge.jupiterYears);
+    $(".jupiter-years-left").text(reusableAge.jupiterYearsLeft);
+    $(".results").show();
   });
 });

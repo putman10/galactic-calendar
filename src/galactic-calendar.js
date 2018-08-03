@@ -88,6 +88,5 @@ calculateJupiterLifeLeft() {
   let lifeExpectancyOnJupiter = this.lifeExpectancy / 11.86;
   let jupiterLifeLeft = lifeExpectancyOnJupiter - this.jupiterYears;
   this.jupiterYearsLeft =  jupiterLifeLeft;
-  debugger;
 }
 }
