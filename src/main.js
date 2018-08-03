@@ -9,8 +9,10 @@ $(document).ready(function() {
   $("#age-calculator").submit(function(event){
     event.preventDefault();
     // var birthdate = $("#age").val();
-    var birthdate = "1990-01-30";
-    var reusableAge = new Age(birthdate);
+    var hardCodedInput = "1990-01-30";
+    var birthDate = new Date(hardCodedInput);
+    var currentDate = new Date();
+    var reusableAge = new Age(birthDate, currentDate);
     $(".results").text(reusableAge.calculateAge());
   });
 });

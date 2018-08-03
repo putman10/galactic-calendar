@@ -1,55 +1,53 @@
 export class Age {
-  constructor(birthdate) {
-    this.birthDate = birthdate;
-    this.earthYears = 0;
-    this.earthSeconds = 0;
-    this.mercuryYears = 0;
-    this.venusYears = 0;
-    this.marsYears = 0;
-    this.jupiterYears = 0;
+  constructor(userBirthDate, currentDate) {
+    this.birthDate = userBirthDate;
+    this.curDate = currentDate;
+    this.earthYears;
+    this.earthSeconds;
+    this.mercuryYears;
+    this.venusYears;
+    this.marsYears;
+    this.jupiterYears;
   }
 
 calculateAge(){
-  this.earthYears = this.calculateEarthYears();
-  this.earthSeconds = this.convertAgeToSeconds();
-  this.mercuryYears = this.calculateMercuryYears();
-  this.venusYears = this.calculateVenusYears();
-  this.marsYears = this.calculateMarsYears();
-  this.jupiterYears = this.calculateJupiterYears();
+  this.calculateEarthYears();
+  this.convertAgeToSeconds();
+  this.calculateMercuryYears();
+  this.calculateVenusYears();
+  this.calculateMarsYears();
+  this.calculateJupiterYears();
   }
 
 calculateEarthYears() {
-  let curDate = new Date();
-  let birthDate = new Date(this.birthDate);
-  let earthYears = curDate.getUTCFullYear() % birthDate.getUTCFullYear();
-  return earthYears;
+  let earthYears = this.curDate.getUTCFullYear() % this.birthDate.getUTCFullYear();
+  this.earthYears = earthYears;
 }
 
 convertAgeToSeconds() {
-let curDate = new Date();
-let birthDate = new Date(this.birthDate);
-let ageInMilliSeconds = curDate.getTime() - birthDate.getTime();
-var ageInSeconds = (ageInMilliSeconds / 1000).toFixed(0);
-return ageInSeconds;
+let ageInMilliSeconds = this.curDate.getTime() - this.birthDate.getTime();
+let ageInSeconds = (ageInMilliSeconds / 1000).toFixed(0);
+this.earthSeconds = parseInt(ageInSeconds);
 }
 
 calculateMercuryYears() {
-  let mercuryYears = (((((this.earthSeconds / .24)/60)/24)/30)/365);
-  return mercuryYears;
+  let mercuryYears = (((((this.earthSeconds / 60)/24)/30)/365)/.24);
+  this.mercuryYears = mercuryYears;
 }
 
 calculateVenusYears() {
-  let venusYears = (((((this.earthSeconds / .62)/60)/24)/30)/365);
-  return venusYears;
+  let venusYears = (((((this.earthSeconds/60)/24)/30)/365)/.62);
+  this.venusYears =  venusYears;
 }
 
 calculateMarsYears() {
-  let marsYears = (((((this.earthSeconds / 1.88)/60)/24)/30)/365);
-  return marsYears;
+  let marsYears = (((((this.earthSeconds/60)/24)/30)/365)/1.88);
+  this.marsYears =  marsYears;
 }
 
 calculateJupiterYears() {
-  let jupiterYears = (((((this.earthSeconds / 11.86)/60)/24)/30)/365);
-  return jupiterYears;
+  let jupiterYears = (((((this.earthSeconds/60)/24)/30)/365)/11.86);
+  this.jupiterYears =  jupiterYears;
+  debugger;
 }
 }
