@@ -24,47 +24,47 @@ describe('Age', function(){
 
  it('should test wether correct Mercury age is returned', function(){
    reusableAge.calculateMercuryYears();
-   expect(reusableAge.mercuryYears).toEqual(237.71689497716898);
+   expect(reusableAge.mercuryYears).toEqual(237.716895);
  });
 
  it('should test wether correct Venus age is returned', function(){
    reusableAge.calculateVenusYears();
-   expect(reusableAge.venusYears).toEqual(92.01944321696863);
+   expect(reusableAge.venusYears).toEqual(92.019443);
  });
 
  it('should test wether correct Mars age is returned', function(){
    reusableAge.calculateMarsYears();
-   expect(reusableAge.marsYears).toEqual(30.34683765665987);
+   expect(reusableAge.marsYears).toEqual(30.346838);
  });
 
  it('should test wether correct Jupiter age is returned', function(){
    reusableAge.calculateJupiterYears();
-   expect(reusableAge.jupiterYears).toEqual(4.810459932084363);
+   expect(reusableAge.jupiterYears).toEqual(4.810460);
  });
 
  it('should test wether the correct Earth life left of user is returned', function(){
    reusableAge.calculateEarthLifeLeft();
-   expect(reusableAge.earthYearsLeft).toEqual(50.7);
+   expect(reusableAge.earthYearsLeft).toEqual(50.70);
  });
 
  it('should test wether the correct Mercury life left of user is returned', function(){
    reusableAge.calculateMercuryLifeLeft();
-   expect(reusableAge.mercuryYearsLeft).toEqual(327.9166666666667);
+   expect(reusableAge.mercuryYearsLeft).toEqual(327.916667);
  });
 
  it('should test wether the correct Venus life left of user is returned', function(){
    reusableAge.calculateVenusLifeLeft();
-   expect(reusableAge.venusYearsLeft).toEqual(126.93548387096774);
+   expect(reusableAge.venusYearsLeft).toEqual(126.935484);
  });
 
  it('should test wether the correct Mars life left of user is returned', function(){
    reusableAge.calculateMarsLifeLeft();
-   expect(reusableAge.marsYearsLeft).toEqual(41.861702127659576);
+   expect(reusableAge.marsYearsLeft).toEqual(41.861702);
  });
 
  it('should test wether the correct Jupiter life left of user is returned', function(){
    reusableAge.calculateJupiterLifeLeft();
-   expect(reusableAge.jupiterYearsLeft).toEqual(6.63575042158516);
+   expect(reusableAge.jupiterYearsLeft).toEqual(6.635750);
  });
 
 

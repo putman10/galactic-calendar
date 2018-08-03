@@ -37,56 +37,56 @@ calculateEarthYears() {
 
 convertAgeToSeconds() {
   let ageInMilliSeconds = this.curDate.getTime() - this.birthDate.getTime();
-  let ageInSeconds = (ageInMilliSeconds / 1000).toFixed(0);
-  this.earthSeconds = parseInt(ageInSeconds);
+  let ageInSeconds = ageInMilliSeconds / 1000;
+  this.earthSeconds = parseInt(ageInSeconds.toFixed(0));
 }
 
 calculateMercuryYears() {
-  let mercuryYears = (((((this.earthSeconds / 60)/24)/30)/365)/.24);
-  this.mercuryYears = mercuryYears.toFixed(6);
+  let mercuryYears = parseFloat((((((this.earthSeconds / 60)/24)/30)/365)/.24).toFixed(6));
+  this.mercuryYears = mercuryYears;
 }
 
 calculateVenusYears() {
-  let venusYears = (((((this.earthSeconds/60)/24)/30)/365)/.62);
-  this.venusYears =  venusYears.toFixed(6);
+  let venusYears = parseFloat((((((this.earthSeconds/60)/24)/30)/365)/.62).toFixed(6));
+  this.venusYears =  venusYears;
 }
 
 calculateMarsYears() {
-  let marsYears = (((((this.earthSeconds/60)/24)/30)/365)/1.88);
-  this.marsYears =  marsYears.toFixed(6);
+  let marsYears = parseFloat((((((this.earthSeconds/60)/24)/30)/365)/1.88).toFixed(6));
+  this.marsYears =  marsYears;
 }
 
 calculateJupiterYears() {
-  let jupiterYears = (((((this.earthSeconds/60)/24)/30)/365)/11.86);
-  this.jupiterYears =  jupiterYears.toFixed(6);
+  let jupiterYears = parseFloat((((((this.earthSeconds/60)/24)/30)/365)/11.86).toFixed(6));
+  this.jupiterYears =  jupiterYears;
 }
 
 calculateEarthLifeLeft() {
-  let earthLifeLeft = this.lifeExpectancy - this.earthYears;
-  this.earthYearsLeft =  earthLifeLeft.toFixed(6);
+  let earthLifeLeft = parseFloat((this.lifeExpectancy - this.earthYears).toFixed(2));
+  this.earthYearsLeft =  earthLifeLeft;
 }
 
 calculateMercuryLifeLeft() {
   let lifeExpectancyOnMercury = this.lifeExpectancy / .24;
-  let mercuryLifeLeft = lifeExpectancyOnMercury - this.mercuryYears;
-  this.mercuryYearsLeft =  mercuryLifeLeft.toFixed(6);
+  let mercuryLifeLeft = parseFloat((lifeExpectancyOnMercury - this.mercuryYears).toFixed(6));
+  this.mercuryYearsLeft =  mercuryLifeLeft;
 }
 
 calculateVenusLifeLeft() {
   let lifeExpectancyOnVenus = this.lifeExpectancy / .62;
-  let venusLifeLeft = lifeExpectancyOnVenus - this.venusYears;
-  this.venusYearsLeft =  venusLifeLeft.toFixed(6);
+  let venusLifeLeft = parseFloat((lifeExpectancyOnVenus - this.venusYears).toFixed(6));
+  this.venusYearsLeft =  venusLifeLeft;
 }
 
 calculateMarsLifeLeft() {
   let lifeExpectancyOnMars = this.lifeExpectancy / 1.88;
-  let marsLifeLeft = lifeExpectancyOnMars - this.marsYears;
-  this.marsYearsLeft =  marsLifeLeft.toFixed(6);
+  let marsLifeLeft = parseFloat((lifeExpectancyOnMars - this.marsYears).toFixed(6));
+  this.marsYearsLeft =  marsLifeLeft;
 }
 
 calculateJupiterLifeLeft() {
   let lifeExpectancyOnJupiter = this.lifeExpectancy / 11.86;
-  let jupiterLifeLeft = lifeExpectancyOnJupiter - this.jupiterYears;
-  this.jupiterYearsLeft =  jupiterLifeLeft.toFixed(6);
+  let jupiterLifeLeft = parseFloat((lifeExpectancyOnJupiter - this.jupiterYears).toFixed(6));
+  this.jupiterYearsLeft =  jupiterLifeLeft;
 }
 }
