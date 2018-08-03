@@ -29,7 +29,7 @@ calculateEarthMonths() {
   testcurrent++;
   let testbirth = birthDate.getMonth();
   testbirth++;
-  let earthMonths = testcurrent % testbirth;
+  let earthMonths = testcurrent - testbirth;
   return earthMonths;
 }
 
