@@ -7,9 +7,13 @@ constructor(userBirthDate, currentDate, lifeExp) {
   this.earthYearsLeft = 0;
   this.earthSeconds = 0;
   this.mercuryYears = 0;
+  this.mercuryYearsLeft = 0;
   this.venusYears = 0;
+  this.venusYearsLeft = 0;
   this.marsYears = 0;
+  this.marsYearsLeft = 0;
   this.jupiterYears = 0;
+  this.jupiterYearsLeft = 0;
 }
 
 calculateAge(){
@@ -20,6 +24,10 @@ calculateAge(){
   this.calculateMarsYears();
   this.calculateJupiterYears();
   this.calculateEarthLifeLeft();
+  this.calculateMercuryLifeLeft();
+  this.calculateVenusLifeLeft();
+  this.calculateMarsLifeLeft();
+  this.calculateJupiterLifeLeft();
   }
 
 calculateEarthYears() {
@@ -56,5 +64,30 @@ calculateJupiterYears() {
 calculateEarthLifeLeft() {
   let earthLifeLeft = this.lifeExpectancy - this.earthYears;
   this.earthYearsLeft =  earthLifeLeft;
+}
+
+calculateMercuryLifeLeft() {
+  let lifeExpectancyOnMercury = this.lifeExpectancy / .24;
+  let mercuryLifeLeft = lifeExpectancyOnMercury - this.mercuryYears;
+  this.mercuryYearsLeft =  mercuryLifeLeft;
+}
+
+calculateVenusLifeLeft() {
+  let lifeExpectancyOnVenus = this.lifeExpectancy / .62;
+  let venusLifeLeft = lifeExpectancyOnVenus - this.venusYears;
+  this.venusYearsLeft =  venusLifeLeft;
+}
+
+calculateMarsLifeLeft() {
+  let lifeExpectancyOnMars = this.lifeExpectancy / 1.88;
+  let marsLifeLeft = lifeExpectancyOnMars - this.marsYears;
+  this.marsYearsLeft =  marsLifeLeft;
+}
+
+calculateJupiterLifeLeft() {
+  let lifeExpectancyOnJupiter = this.lifeExpectancy / 11.86;
+  let jupiterLifeLeft = lifeExpectancyOnJupiter - this.jupiterYears;
+  this.jupiterYearsLeft =  jupiterLifeLeft;
+  debugger;
 }
 }

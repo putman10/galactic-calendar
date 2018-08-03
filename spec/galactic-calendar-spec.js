@@ -42,9 +42,29 @@ describe('Age', function(){
    expect(reusableAge.jupiterYears).toEqual(4.810459932084363);
  });
 
- it('should test wether the correct earth life left of user is returned', function(){
+ it('should test wether the correct Earth life left of user is returned', function(){
    reusableAge.calculateEarthLifeLeft();
    expect(reusableAge.earthYearsLeft).toEqual(50.7);
+ });
+
+ it('should test wether the correct Mercury life left of user is returned', function(){
+   reusableAge.calculateMercuryLifeLeft();
+   expect(reusableAge.mercuryYearsLeft).toEqual(327.9166666666667);
+ });
+
+ it('should test wether the correct Venus life left of user is returned', function(){
+   reusableAge.calculateVenusLifeLeft();
+   expect(reusableAge.venusYearsLeft).toEqual(126.93548387096774);
+ });
+
+ it('should test wether the correct Mars life left of user is returned', function(){
+   reusableAge.calculateMarsLifeLeft();
+   expect(reusableAge.marsYearsLeft).toEqual(41.861702127659576);
+ });
+
+ it('should test wether the correct Jupiter life left of user is returned', function(){
+   reusableAge.calculateJupiterLifeLeft();
+   expect(reusableAge.jupiterYearsLeft).toEqual(6.63575042158516);
  });
 
 
